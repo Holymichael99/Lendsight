@@ -23,3 +23,18 @@ plt.xlabel('Total Income')
 plt.ylabel('Loan Amount')
 plt.tight_layout()
 plt.show()
+
+# --- Plot 2: Average Loan Amount by Gender, Education, and Self-Employed ---
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+sns.barplot(data=df, x='Gender', y='LoanAmount', ax=axes[0])
+axes[0].set_title('Average Loan Amount by Gender')
+
+sns.barplot(data=df, x='Education', y='LoanAmount', ax=axes[1])
+axes[1].set_title('Average Loan Amount by Education')
+
+sns.barplot(data=df, x='Self_Employed', y='LoanAmount', ax=axes[2])
+axes[2].set_title('Average Loan Amount by Self-Employed Status')
+
+plt.tight_layout()
+plt.show()
