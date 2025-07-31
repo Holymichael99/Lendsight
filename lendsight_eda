@@ -28,3 +28,18 @@ for i, col in enumerate(numeric_cols, 1):
     plt.title(f'Distribution of {col}')
 plt.tight_layout()
 plt.show()
+
+# -------------------------------
+# 3. Count Plots for Categorical Features
+# -------------------------------
+categorical_cols = ['Gender', 'Married', 'Dependents', 'Education',
+                    'Self_Employed', 'Credit_History', 'Property_Area']
+
+plt.figure(figsize=(14, 12))
+for i, col in enumerate(categorical_cols, 1):
+    plt.subplot(3, 3, i)
+    sns.countplot(data=df, x=col, palette='Set2')
+    plt.title(f'Count Plot of {col}')
+    plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
