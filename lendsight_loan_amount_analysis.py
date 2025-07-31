@@ -38,3 +38,12 @@ axes[2].set_title('Average Loan Amount by Self-Employed Status')
 
 plt.tight_layout()
 plt.show()
+
+# --- Plot 3: Loan Amount vs Number of Dependents ---
+plt.figure(figsize=(8, 5))
+sns.barplot(data=df, x='Dependents', y='LoanAmount', order=['0', '1', '2', '3'])
+plt.title('Average Loan Amount by Number of Dependents')
+plt.xlabel('Number of Dependents')
+plt.ylabel('Average Loan Amount')
+plt.tight_layout()
+plt.show()
