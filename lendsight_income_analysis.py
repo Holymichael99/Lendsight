@@ -29,3 +29,13 @@ plt.xlabel('Marital Status')
 plt.ylabel('Total Income')
 plt.tight_layout()
 plt.show()
+
+# --- Plot 3: Total Income by Education Level ---
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=df, x='Education', y='TotalIncome')
+plt.title('Total Income by Education Level')
+plt.xlabel('Education')
+plt.ylabel('Total Income')
+plt.tight_layout()
+plt.show()
+
