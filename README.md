@@ -1,24 +1,24 @@
 # LendSight: Understanding the Patterns Behind Loan Applications
 
-## 📌 Introduction
+##  Introduction
 In today's evolving financial landscape, banks and lending institutions are inundated with loan applications daily. Understanding the patterns behind these applications—who applies, for how much, and under what conditions—is vital to making informed lending decisions and managing risk effectively.
 
 **LendSight** is a data-driven project aimed at uncovering insights from a historical loan dataset. Through structured analysis and visualization, we explore demographic and financial factors that influence loan applications and approvals.
 
-## 🎯 Objective
+##  Objective
 The primary objective of this project is to analyze loan application data to reveal trends, patterns, and segments that characterize different applicant types. This can aid in:
 - Understanding who applies for loans and under what conditions.
 - Identifying factors that influence loan approval decisions.
 - Recognizing high-risk applicant profiles through clustering and credit behavior.
 
-## 🧠 Data Source
+##  Data Source
 - Source: [Kaggle](https://www.kaggle.com/datasets)
 - Dataset Name: **Loan Prediction Dataset**
 - Format: CSV
 
 ---
 
-## 🔍 Analyses Performed
+##  Analyses Performed
 
 ### 1. Exploratory Data Analysis (EDA)
 We began by exploring the dataset to understand its structure, distributions, and completeness.
@@ -459,7 +459,7 @@ pip install pandas numpy matplotlib seaborn missingno scikit-learn
 
 ---
 
-##  Conclusion
+
 
 
   ## Project Status
