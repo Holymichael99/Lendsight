@@ -7,3 +7,11 @@ import missingno as msno
 
 # Load Dataset
 df = pd.read_csv("loan.csv")  # Adjust path if needed
+
+# -------------------------------
+# 1. Summary Information
+# -------------------------------
+print("Dataset Info:")
+print(df.info())
+print("\nMissing Values:")
+print(df.isnull().sum())
