@@ -20,3 +20,12 @@ plt.xlabel('Applicant Income')
 plt.ylabel('Coapplicant Income')
 plt.tight_layout()
 plt.show()
+
+# --- Plot 2: Total Income by Marital Status ---
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=df, x='Married', y='TotalIncome')
+plt.title('Total Income by Marital Status')
+plt.xlabel('Marital Status')
+plt.ylabel('Total Income')
+plt.tight_layout()
+plt.show()
