@@ -55,3 +55,10 @@ msno.heatmap(df)
 plt.show()
 
 # -------------
+
+# -------------------------------
+# 5. Imputation Strategy (Basic)
+# -------------------------------
+# Fill categorical columns with mode
+for col in ['Gender', 'Dependents', 'Self_Employed']:
+    df[col].fillna(df[col].mode()[0], inplace=True)
