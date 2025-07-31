@@ -1,4 +1,3 @@
-# Required Libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -45,16 +44,15 @@ plt.tight_layout()
 plt.show()
 
 # -------------------------------
-# 4. Missing Data Visualization
+# 4. Visualize Missing Values BEFORE Imputation
 # -------------------------------
-print("\nVisualizing Missing Values...")
+print("\nMissing values BEFORE imputation:")
 msno.matrix(df)
+plt.title("Missing Values Before Imputation")
 plt.show()
 
-msno.heatmap(df)
-plt.show()
-
-# -------------
+# Save missing counts BEFORE imputation (IMPORTANT: BEFORE filling missing values)
+missing_before = df.isnull().sum()
 
 # -------------------------------
 # 5. Imputation Strategy (Basic)
@@ -63,7 +61,7 @@ plt.show()
 for col in ['Gender', 'Dependents', 'Self_Employed']:
     df[col].fillna(df[col].mode()[0], inplace=True)
 
-    # Fill numerical columns
+# Fill numerical columns
 df['LoanAmount'].fillna(df['LoanAmount'].median(), inplace=True)
 df['Loan_Amount_Term'].fillna(df['Loan_Amount_Term'].mode()[0], inplace=True)
 df['Credit_History'].fillna(df['Credit_History'].mode()[0], inplace=True)
@@ -79,18 +77,19 @@ msno.matrix(df)
 plt.title("Missing Values After Imputation")
 plt.show()
 
-# Save missing counts after
+# Save missing counts AFTER imputation
 missing_after = df.isnull().sum()
 
 # -------------------------------
 # 7. Bar Plot Comparison
 # -------------------------------
+# Only show columns that had missing data before imputation
 missing_df = pd.DataFrame({
     'Before Imputation': missing_before,
     'After Imputation': missing_after
 })
 
-missing_df = missing_df[missing_df['Before Imputation'] > 0]  # Only show columns that had missing data
+missing_df = missing_df[missing_df['Before Imputation'] > 0]
 
 missing_df.plot(kind='bar', figsize=(10,6))
 plt.title('Missing Values Before and After Imputation')
