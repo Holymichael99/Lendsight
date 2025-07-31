@@ -43,3 +43,15 @@ for i, col in enumerate(categorical_cols, 1):
     plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+# -------------------------------
+# 4. Missing Data Visualization
+# -------------------------------
+print("\nVisualizing Missing Values...")
+msno.matrix(df)
+plt.show()
+
+msno.heatmap(df)
+plt.show()
+
+# -------------
