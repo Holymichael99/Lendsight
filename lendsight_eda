@@ -62,3 +62,11 @@ plt.show()
 # Fill categorical columns with mode
 for col in ['Gender', 'Dependents', 'Self_Employed']:
     df[col].fillna(df[col].mode()[0], inplace=True)
+
+    # Fill numerical columns
+df['LoanAmount'].fillna(df['LoanAmount'].median(), inplace=True)
+df['Loan_Amount_Term'].fillna(df['Loan_Amount_Term'].mode()[0], inplace=True)
+df['Credit_History'].fillna(df['Credit_History'].mode()[0], inplace=True)
+
+print("\nMissing values after imputation:")
+print(df.isnull().sum())
